@@ -1,13 +1,34 @@
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 
 public class Main {
     public static void main(String[] args) {
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm");
+        Scanner taskinput = new Scanner(System.in);
+        boolean running = true;
+
+        while (running){
+            System.out.println("1. add task");
+            System.out.println("2. view task");
+            System.out.println("3. exit");
+            System.out.print("Choose a option: ");
+
+            int choice = taskinput.nextInt();
+
+            if (choice==1) {
+                Taskmanager.addtaskinput();
+            } else if (choice==2) {
+                System.err.println("j");
+            } else if (choice==3) {   
+                running=false;
+            } else {
+                System.out.println("INVALID CHOICE PLEASE ENTER AGAIN: ");
+            }
+
+        }
+        System.out.println("Program finished...");
+
+        /*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm");
 
         Scanner taskinput = new Scanner(System.in);
 
@@ -43,7 +64,7 @@ public class Main {
         priority,
         category,
         deadline,
-        estimated_time);
+        estimated_time);*/
 
     /*Taskfile t1= new  Taskfile(
         "1",
@@ -54,7 +75,7 @@ public class Main {
         LocalDateTime.of(2026, 04, 16, 15, 13), 
         Duration.ofHours(4));*/
 
-    System.err.println(t1.tostring());
+    //System.err.println(t1.tostring());
 
    /*System.out.println(
         t1.gettask_id() + " ," + 

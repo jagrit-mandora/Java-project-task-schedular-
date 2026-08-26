@@ -17,4 +17,8 @@ keeping a track of uuid generated id is weird and will not look good in a task s
 == to use the date value input by user in the task. i needed to convert the date value to localdatetime as scanner does not have localdatetime in my knowleadge. so used datetimeformatter.
 refrenced https://www.geeksforgeeks.org/java/convert-string-to-localdate-in-java/
 
+log 17-08-2026
+work done today
+==made taskmanager class to handel things like add task , remove task, etc
+
 
