@@ -1,6 +1,6 @@
 project logs:
 
-15-08-2026:
+earlier from 15-08-2026:
 work done earlier form this date.
 ==First made three new types called category, priority and status using enum because later we need to apply a algorithm to priorities tasks and having some predefined types are better.
 ==Then made file named taskfile to call later in main. in this file declared taskid, title, description, priority, category, status. to have user later enter these values.
@@ -20,5 +20,14 @@ refrenced https://www.geeksforgeeks.org/java/convert-string-to-localdate-in-java
 log 17-08-2026
 work done today
 ==made taskmanager class to handel things like add task , remove task, etc
+
+log 02-09-2026
+troubleshoot the issue with addtaskinput not add the taskfile object to arraylist.
+problem with declaration of static and non static in classes. removed static keyword from all but main
+and changed the calling of all fuctions to that of a non static method.
+learnt about the diffrence in static and non static. 
+refrenced :https://www.geeksforgeeks.org/java/difference-between-static-and-non-static-method-in-java/,
+https://stackoverflow.com/questions/2559527/non-static-variable-cannot-be-referenced-from-a-static-context,
+claude
 
 

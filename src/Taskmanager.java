@@ -5,11 +5,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
  
 public class Taskmanager{
+    
+    private ArrayList<Taskfile> task = new ArrayList<>();
 
-        
-        ArrayList<String> t = new ArrayList<>();
-
-    public static  void addtaskinput() {
+    public void addtaskinput() {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm");
 
@@ -49,6 +48,17 @@ public class Taskmanager{
         deadline,
         estimated_time);
 
+        task.add(t1);
+
         System.err.println(t1.tostring());
         }
+
+        public void removetask() {
+
+
+        }
+
+
+
+
 }
