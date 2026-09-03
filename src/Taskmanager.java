@@ -54,11 +54,11 @@ public class Taskmanager{
         }
 
         public void removetask() {
-
-
+            task.remove(0);
         }
 
-
-
+        public void showtask(){
+            task.toString();
+        }
 
 }
