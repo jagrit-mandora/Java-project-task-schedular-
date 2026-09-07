@@ -6,6 +6,7 @@ public class Main {
 
         Scanner taskinput = new Scanner(System.in);
         boolean running = true;
+        Taskmanager manager = new Taskmanager();
 
         while (running){
             System.out.println("1. add task");
@@ -17,15 +18,13 @@ public class Main {
             int choice = taskinput.nextInt();
 
             if (choice==1) {
-                Taskmanager manager = new Taskmanager();
                 manager.addtaskinput();
             } else if (choice==2) {
                 System.err.println("j");
             } else if (choice==3) {   
                 running=false;
             } else if (choice==4) {
-                Taskmanger managerdisplay = new Taskmanager();
-                managerdisplay.showtask();
+                manager.showtask();
             }else {
                 System.out.println("INVALID CHOICE PLEASE ENTER AGAIN: ");
             }

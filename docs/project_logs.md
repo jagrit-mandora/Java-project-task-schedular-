@@ -30,4 +30,6 @@ refrenced :https://www.geeksforgeeks.org/java/difference-between-static-and-non-
 https://stackoverflow.com/questions/2559527/non-static-variable-cannot-be-referenced-from-a-static-context,
 claude
 
-
+log 03-09-2026 to  07-09-2026
+tried to print the the all the tasks the from the arraylist but failed a few times. now am refrecing claude to find the error in the code. 
+made changes to the main program so it now calls the the taskmanager class only one time outside the menu loop before the program starts.

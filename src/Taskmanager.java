@@ -58,7 +58,11 @@ public class Taskmanager{
         }
 
         public void showtask(){
-            task.toString();
+            for (int i=0; i < task.size() ; i++){
+                for (int j = 0; j < i.size() ; j++){
+                    System.err.println("i,");
+                }
+            }
         }
 
 }
