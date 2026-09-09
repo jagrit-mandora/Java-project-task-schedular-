@@ -3,6 +3,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+//Arraylist = ArrayList in Java is a resizable 
+//array provided in the java.util package. Unlike normal arrays, its size can grow or shrink dynamically as elements are 
+//added or removed.
  
 public class Taskmanager{
     
@@ -59,9 +63,14 @@ public class Taskmanager{
 
         public void showtask(){
             for (int i=0; i < task.size() ; i++){
-                for (int j = 0; j < i.size() ; j++){
-                    System.err.println("i,");
+                Taskfile t = task.get(i);
+                System.err.println(t.tostring());
                 }
+            }
+
+        public void edittask(){
+            for (int i=0; i < task.size() ; i++){
+                Taskfile t = task.get(i);
             }
         }
 

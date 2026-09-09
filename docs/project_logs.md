@@ -33,3 +33,7 @@ claude
 log 03-09-2026 to  07-09-2026
 tried to print the the all the tasks the from the arraylist but failed a few times. now am refrecing claude to find the error in the code. 
 made changes to the main program so it now calls the the taskmanager class only one time outside the menu loop before the program starts.
+
+log 09-09-2026
+succeded in making the showtask() it now allows to veiw all the tasks. used a for loop to navigate the task array. then called the value using task.get(i) then printed the value at that index.
+started making the edittask() leaning in the direction of iterating over the array then change the value to be changed using set.
