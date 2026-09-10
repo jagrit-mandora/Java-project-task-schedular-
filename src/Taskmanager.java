@@ -69,8 +69,13 @@ public class Taskmanager{
             }
 
         public void edittask(){
+            Scanner idinput = new Scanner(System.in);
+            System.err.print("Please enter the id of task you want to change: ");
+            int id = idinput.nextInt();
             for (int i=0; i < task.size() ; i++){
                 Taskfile t = task.get(i);
+                System.err.println(t);
+
             }
         }
 

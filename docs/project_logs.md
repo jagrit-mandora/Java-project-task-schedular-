@@ -37,3 +37,7 @@ made changes to the main program so it now calls the the taskmanager class only 
 log 09-09-2026
 succeded in making the showtask() it now allows to veiw all the tasks. used a for loop to navigate the task array. then called the value using task.get(i) then printed the value at that index.
 started making the edittask() leaning in the direction of iterating over the array then change the value to be changed using set.
+
+log 10-09-2026
+worked on edittask() finally properly started using earlier get and set made in taskfile. brain strommed about the solution of edit that will work but the solution is not found yet. 
+made changed in main class menu to incoperate edittask.
