@@ -41,3 +41,6 @@ started making the edittask() leaning in the direction of iterating over the arr
 log 10-09-2026
 worked on edittask() finally properly started using earlier get and set made in taskfile. brain strommed about the solution of edit that will work but the solution is not found yet. 
 made changed in main class menu to incoperate edittask.
+
+log 11-09-2026
+worked on edittask() can properly navigate to the entry or task the user wants to change but there is a bug with setters in taskfile that are causing problem . there is also a issue of int and duration conversion.
