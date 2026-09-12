@@ -44,3 +44,7 @@ made changed in main class menu to incoperate edittask.
 
 log 11-09-2026
 worked on edittask() can properly navigate to the entry or task the user wants to change but there is a bug with setters in taskfile that are causing problem . there is also a issue of int and duration conversion.
+
+log 12-09-2026
+completed the edittask(). Debugged estimated time part. the problem was syntax with duration data type conversion which should have used Duration.ofHours() to convert int to duration. 
+working on rest of the entries . they are fairly simpple as the logic is fairly unserstood.

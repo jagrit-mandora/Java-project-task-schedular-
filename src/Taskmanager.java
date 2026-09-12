@@ -78,9 +78,9 @@ public class Taskmanager{
                     System.err.println(t.toString());
                     Scanner estimated_time_input = new Scanner(System.in);
                     System.err.print("Please enter the estimated time you want to change to: ");
-                    int estimated_time_here = estimated_time_input.nextInt();
-                    Taskfile.setestimated_time(estimated_time_here);
-
+                    int hours= estimated_time_input.nextInt();
+                    Duration estimated_time = Duration.ofHours(hours);
+                    t.setestimated_time(estimated_time);
                 }
 
             }
