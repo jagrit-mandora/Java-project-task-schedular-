@@ -57,33 +57,57 @@ public class Taskmanager{
         System.err.println(t1.tostring());
         }
 
-        public void removetask() {
-            task.remove(0);
-        }
+    public void removetask() {
+        task.remove(0);
+    }
 
-        public void showtask(){
-            for (int i=0; i < task.size() ; i++){
-                Taskfile t = task.get(i);
-                System.err.println(t.tostring());
-                }
-            }
-
-        public void edittask(){
-            Scanner idinput = new Scanner(System.in);
-            System.err.print("Please enter the id of task you want to change: ");
-            int id = idinput.nextInt();
-            for (int i=0; i < task.size() ; i++){
-                Taskfile t = task.get(i);
-                if ( t.gettask_id().equals(String.valueOf(id)) ){
-                    System.err.println(t.toString());
-                    Scanner estimated_time_input = new Scanner(System.in);
-                    System.err.print("Please enter the estimated time you want to change to: ");
-                    int hours= estimated_time_input.nextInt();
-                    Duration estimated_time = Duration.ofHours(hours);
-                    t.setestimated_time(estimated_time);
-                }
-
+    public void showtask(){
+        for (int i=0; i < task.size() ; i++){
+            Taskfile t = task.get(i);
+            System.err.println(t.tostring());
             }
         }
 
+    public void edittask(){
+        boolean running = true;
+        Scanner editchoice = new Scanner(System.in);
+        Scanner idinput = new Scanner(System.in);
+        System.err.print("Please enter the id of task you want to change: ");
+        int id = idinput.nextInt();
+        for (int i=0; i < task.size() ; i++){
+            Taskfile t = task.get(i);
+            if ( t.gettask_id().equals(String.valueOf(id)) ){
+                System.err.println(t.toString());
+
+                while (running) { 
+                    System.out.println("1. Title");
+                    System.out.println("2. description");
+                    System.out.println("3. Priority");
+                    System.out.println("4. Category");
+                    System.out.println("5 . Deadline");
+                    System.out.println("6. Estimated time");
+                    System.out.println("7. Status");
+                    System.out.println("8. Cancel");
+                    System.out.print("Choose a option: ");
+
+                    int choice = editchoice.nextInt();
+
+                    if (choice == 1) {
+                        Scanner input = new Scanner(System.in);
+                        System.err.print("Please enter the title you want to change to: ");
+                        String newtitle = input.nextLine();
+                        t.settitle(newtitle);
+                    } else if (choice == 2){
+                        Scanner input = new Scanner(System.in);
+                        System.err.print("Please enter the title you want to change to: ");
+                        String newtitle = input.nextLine();
+                        t.settitle(newtitle);
+                    }
+                }
+                    
+            }
+        
+        }
+
+    }
 }

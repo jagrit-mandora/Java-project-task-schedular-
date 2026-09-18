@@ -48,3 +48,8 @@ worked on edittask() can properly navigate to the entry or task the user wants t
 log 12-09-2026
 completed the edittask(). Debugged estimated time part. the problem was syntax with duration data type conversion which should have used Duration.ofHours() to convert int to duration. 
 working on rest of the entries . they are fairly simpple as the logic is fairly unserstood.
+
+log 18-09-2026
+Made changes in syntax of taskmanager and added title and description editting to edittask().
+decided on which dbms to use for data storage decided SqlLite for now as it less complex than MySql.
+
