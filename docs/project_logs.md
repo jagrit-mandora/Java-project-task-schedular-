@@ -53,3 +53,5 @@ log 18-09-2026
 Made changes in syntax of taskmanager and added title and description editting to edittask().
 decided on which dbms to use for data storage decided SqlLite for now as it less complex than MySql.
 
+log 19-09-2026
+made progress on edittask and wrote the if else script for the what task to edit. my understanding of the code and architecture seems to have improved on my part. made decisions over whether i should place the (i dont know what to call it but it is the one where the user input something but code will repromt the user till write input is put) in the classes or the program itself decided to put them on the classes it will reduce cluter and increase readabilty.
