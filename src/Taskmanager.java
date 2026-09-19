@@ -11,10 +11,9 @@ import java.util.Scanner;
 public class Taskmanager{
     
     private ArrayList<Taskfile> task = new ArrayList<>();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm");
 
     public void addtaskinput() {
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm");
 
         Scanner taskinput = new Scanner(System.in);
 
@@ -97,17 +96,39 @@ public class Taskmanager{
                         System.err.print("Please enter the title you want to change to: ");
                         String newtitle = input.nextLine();
                         t.settitle(newtitle);
+                        showtask();
                     } else if (choice == 2){
                         Scanner input = new Scanner(System.in);
-                        System.err.print("Please enter the title you want to change to: ");
-                        String newtitle = input.nextLine();
-                        t.settitle(newtitle);
-                    }
-                }
-                    
-            }
+                        System.err.print("Please enter the description you want to change to: ");
+                        String newdescription = input.nextLine();
+                        t.setdescription(newdescription);
+                        showtask();
+                    } else if (choice == 3){
+                        Scanner input = new Scanner(System.in);
+                        System.err.print("Please enter the Priority (LOW , MEDIUM, HIGH, URGENT) you want to change to: ");
+                        String newpriority = input.nextLine();
+                        Priority priority = Priority.valueOf(newpriority.toUpperCase());
+                        t.setpriority(priority);
+                        showtask();
+                    } else if (choice == 4){
+                        Scanner input = new Scanner(System.in);
+                        System.err.print("Please enter the Status (WORK, STUDY, EXPENSES, OTHERS) you want to change to: ");
+                        String newstatus = input.nextLine();
+                        Status status = Status.valueOf(newstatus.toUpperCase());
+                        t.setstatus(status);
+                        showtask();
+                    }  else if (choice == 5){
+                        Scanner input = new Scanner(System.in);
+                        System.err.print("Please enter the Deadline you want to change to: ");
+                        String deadline_input = input.nextLine();
+                        LocalDateTime deadline = LocalDateTime.parse(deadline_input, formatter);
+                        t.setdeadline(deadline);
+                        showtask();
+                    } else {showtask();}
         
-        }
+                }
 
+            }
+        }
     }
 }
