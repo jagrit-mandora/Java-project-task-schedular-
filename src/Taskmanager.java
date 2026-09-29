@@ -113,9 +113,9 @@ public class Taskmanager{
                     } else if (choice == 4){
                         Scanner input = new Scanner(System.in);
                         System.err.print("Please enter the Status (WORK, STUDY, EXPENSES, OTHERS) you want to change to: ");
-                        String newstatus = input.nextLine();
-                        Status status = Status.valueOf(newstatus.toUpperCase());
-                        t.setstatus(status);
+                        String newcategory = input.nextLine();
+                        Category category = Category.valueOf(newcategory.toUpperCase());
+                        t.setcategory(category);
                         showtask();
                     }  else if (choice == 5){
                         Scanner input = new Scanner(System.in);
@@ -124,6 +124,22 @@ public class Taskmanager{
                         LocalDateTime deadline = LocalDateTime.parse(deadline_input, formatter);
                         t.setdeadline(deadline);
                         showtask();
+                    } else if (choice == 6){
+                        Scanner input = new Scanner(System.in);
+                        System.err.print("Please enter the Estimated time you want to change to: ");
+                        int hours= input.nextInt();
+                        Duration estimated_time = Duration.ofHours(hours);
+                        t.setestimated_time(estimated_time);
+                        showtask();
+                    } else if (choice == 7){
+                        Scanner input = new Scanner(System.in);
+                        System.out.print("please enter the Status to change to (TODO, DOING, DONE, OVERDUE): ");
+                        String status_input = input.nextLine();
+                        Status status = Status.valueOf(status_input.toUpperCase());
+                        t.setstatus(status);
+                        showtask();
+                    } else if (choice == 8){
+                        running = false;
                     } else {showtask();}
         
                 }
