@@ -58,3 +58,6 @@ made progress on edittask and wrote the if else script for the what task to edit
 
 log 30-09-2026
 completed edit task. next to complete the deleate and loops for inputing correct input.
+
+log 01-10-2026
+made view_task() function to veiw the task of the users choice through taskid. bug with the new function view_task() problem with compilation.

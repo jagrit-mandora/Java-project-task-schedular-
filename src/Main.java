@@ -21,7 +21,7 @@ public class Main {
             if (choice==1) {
                 manager.addtaskinput();
             } else if (choice==2) {
-                System.err.println("j");
+                manager.view_task();
             } else if (choice==3) {
                 manager.showtask();   
             } else if (choice==4) {

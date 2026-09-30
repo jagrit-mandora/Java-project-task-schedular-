@@ -56,6 +56,17 @@ public class Taskmanager{
         System.err.println(t1.tostring());
         }
 
+    public void view_task(){
+        Scanner id = new Scanner(System.in);
+        System.err.println("Please enter the id of task you want to view: ");
+        for (int i=0; i < task.size() ; i++){
+            Taskfile t = task.get(i);
+            if ( t.gettask_id().equals(String.valueOf(id)) ){
+                System.err.println(t.toString());
+            }
+        }
+    }
+
     public void removetask() {
         task.remove(0);
     }
@@ -83,7 +94,7 @@ public class Taskmanager{
                     System.out.println("2. description");
                     System.out.println("3. Priority");
                     System.out.println("4. Category");
-                    System.out.println("5 . Deadline");
+                    System.out.println("5. Deadline");
                     System.out.println("6. Estimated time");
                     System.out.println("7. Status");
                     System.out.println("8. Cancel");
