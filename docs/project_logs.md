@@ -61,3 +61,7 @@ completed edit task. next to complete the deleate and loops for inputing correct
 
 log 01-10-2026
 made view_task() function to veiw the task of the users choice through taskid. bug with the new function view_task() problem with compilation.
+
+log 11-10-2026
+fixed the compilation error in view_task(). completed remove task. with this the first part of the project is done. next is adding a database to this. bug with complition_time setter parameter not being recognised as the paramater and is instead identified as the object which leads to complition date not updating.
+now the competion date in taskfile is behaving weird.

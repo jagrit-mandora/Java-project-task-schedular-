@@ -13,6 +13,7 @@ public class Taskmanager{
     private ArrayList<Taskfile> task = new ArrayList<>();
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm");
 
+
     public void addtaskinput() {
 
         Scanner taskinput = new Scanner(System.in);
@@ -43,12 +44,15 @@ public class Taskmanager{
         int hours= taskinput.nextInt();
         Duration estimated_time = Duration.ofHours(hours);
 
+        LocalDateTime completion_date = null;
+
         Taskfile t1= new  Taskfile(
         title,
         description,
         priority,
         category,
         deadline,
+        completion_date,
         estimated_time);
 
         task.add(t1);
@@ -57,18 +61,28 @@ public class Taskmanager{
         }
 
     public void view_task(){
-        Scanner id = new Scanner(System.in);
+        Scanner idinput = new Scanner(System.in);
         System.err.println("Please enter the id of task you want to view: ");
+        int id = idinput.nextInt();
         for (int i=0; i < task.size() ; i++){
             Taskfile t = task.get(i);
             if ( t.gettask_id().equals(String.valueOf(id)) ){
-                System.err.println(t.toString());
+                System.err.println(t.tostring());
             }
         }
     }
 
     public void removetask() {
-        task.remove(0);
+        Scanner idinput = new Scanner(System.in);
+        System.err.print("Please enter the id of task you want to remove: ");
+        int id = idinput.nextInt();
+        for (int i=0; i < task.size() ; i++){
+            Taskfile t = task.get(i);
+            if ( t.gettask_id().equals(String.valueOf(id)) ){
+                task.remove(i);
+                System.err.println(t.tostring());
+            }
+        }
     }
 
     public void showtask(){
@@ -147,6 +161,10 @@ public class Taskmanager{
                         System.out.print("please enter the Status to change to (TODO, DOING, DONE, OVERDUE): ");
                         String status_input = input.nextLine();
                         Status status = Status.valueOf(status_input.toUpperCase());
+                        if (status == Status.DONE){
+                            t.setcompletion_date(LocalDateTime.now());
+                            System.out.println("DEBUG: " + t.getcompletion_date());
+                        }
                         t.setstatus(status);
                         showtask();
                     } else if (choice == 8){

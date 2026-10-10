@@ -22,6 +22,7 @@ public class Taskfile{
         Priority priority,
         Category category,
         LocalDateTime deadline, 
+        LocalDateTime completion_date, 
         Duration estimated_time){
 
 
@@ -33,8 +34,8 @@ public class Taskfile{
         this.priority=priority;
         this.category=category;
         this.deadline=deadline;
-        /*this.completion_date=completion_date;*/
         this.estimated_time=estimated_time;
+        this.completion_date=completion_date;
         this.status=Status.TODO;
     }
 
@@ -48,13 +49,15 @@ public class Taskfile{
         category + " ,"+ 
         deadline +" ,"+ 
         estimated_time + " ," + 
-        status;
+        status + "," +
+        completion_date;
     }
 
     public void settitle(String title) {this.title=title;}
     public void setdescription(String description) {this.description=description;}
     public void setpriority(Priority priority) {this.priority=priority;}
     public void setcategory(Category category) {this.category=category;}
+    public void setcompletion_date(LocalDateTime completion_date) {this.completion_date=completion_date;}
     public void setdeadline(LocalDateTime deadline) {this.deadline=deadline;}
     public void setestimated_time(Duration estimated_time) {this.estimated_time=estimated_time;}
     public void setstatus(Status status) {this.status=status;}

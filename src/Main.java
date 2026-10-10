@@ -13,7 +13,8 @@ public class Main {
             System.out.println("2. view task");
             System.out.println("3. show all");
             System.out.println("4. edit task ");
-            System.out.println("5 . exit ");
+            System.out.println("5. remove task ");
+            System.out.println("6. exit ");
             System.out.print("Choose a option: ");
 
             int choice = taskinput.nextInt();
@@ -26,7 +27,9 @@ public class Main {
                 manager.showtask();   
             } else if (choice==4) {
                manager.edittask();
-            } else if (choice==5){
+            } else if (choice==5){   
+                manager.removetask(); 
+            } else if (choice==6){   
                 running=false; 
             } else {
                 System.out.println("INVALID CHOICE PLEASE ENTER AGAIN: ");
