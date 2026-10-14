@@ -64,4 +64,9 @@ made view_task() function to veiw the task of the users choice through taskid. b
 
 log 11-10-2026
 fixed the compilation error in view_task(). completed remove task. with this the first part of the project is done. next is adding a database to this. bug with complition_time setter parameter not being recognised as the paramater and is instead identified as the object which leads to complition date not updating.
-now the competion date in taskfile is behaving weird.
+now the completion date in taskfile is behaving weird.
+
+log 14-10-2026
+fixed complition date error. it was simple enough to just set the completion date after status was set to done.
+decided to use sqlite for database as it does not reqiure a server setup and can later be converted to mysql without major changes.
+input validation and sanitation to be implimented

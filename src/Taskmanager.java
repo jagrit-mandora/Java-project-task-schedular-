@@ -52,7 +52,6 @@ public class Taskmanager{
         priority,
         category,
         deadline,
-        completion_date,
         estimated_time);
 
         task.add(t1);
@@ -161,11 +160,10 @@ public class Taskmanager{
                         System.out.print("please enter the Status to change to (TODO, DOING, DONE, OVERDUE): ");
                         String status_input = input.nextLine();
                         Status status = Status.valueOf(status_input.toUpperCase());
+                        t.setstatus(status);
                         if (status == Status.DONE){
                             t.setcompletion_date(LocalDateTime.now());
                             System.out.println("DEBUG: " + t.getcompletion_date());
-                        }
-                        t.setstatus(status);
                         showtask();
                     } else if (choice == 8){
                         running = false;
@@ -176,4 +174,5 @@ public class Taskmanager{
             }
         }
     }
+}
 }

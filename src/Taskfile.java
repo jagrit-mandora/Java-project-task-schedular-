@@ -21,8 +21,7 @@ public class Taskfile{
         String description,
         Priority priority,
         Category category,
-        LocalDateTime deadline, 
-        LocalDateTime completion_date, 
+        LocalDateTime deadline,  
         Duration estimated_time){
 
 
@@ -35,7 +34,6 @@ public class Taskfile{
         this.category=category;
         this.deadline=deadline;
         this.estimated_time=estimated_time;
-        this.completion_date=completion_date;
         this.status=Status.TODO;
     }
 
