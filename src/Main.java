@@ -17,7 +17,7 @@ public class Main {
             System.out.println("6. exit ");
             System.out.print("Choose a option: ");
 
-            int choice = taskinput.nextInt();
+            int choice = Integer.parseInt(taskinput.nextLine());
 
             if (choice==1) {
                 manager.addtaskinput();

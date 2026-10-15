@@ -70,3 +70,6 @@ log 14-10-2026
 fixed complition date error. it was simple enough to just set the completion date after status was set to done.
 decided to use sqlite for database as it does not reqiure a server setup and can later be converted to mysql without major changes.
 input validation and sanitation to be implimented
+
+log 15-10-2026
+made input_helper class to validate the inputs. now it seems there is a problem as input helper methods are not being recognized by taskmanger. also [compact source file does not have main method in the form of void main() or void main(String[] args)] this error appeared.
