@@ -33,13 +33,11 @@ public class Taskmanager{
         Category category = Category.valueOf(helper.readCategory());
         System.out.println("Your category is : " + category);
 
-        System.out.print("please enter the deadline in format of (dd-mm-yyyy hh-mm): ");
-        String deadline_sc=sc.nextLine();
-        LocalDateTime deadline = LocalDateTime.parse(deadline_sc, formatter);
-
-        System.out.print("please enter the estimated duration of task in hours: ");
-        int hours= Integer.parseInt(sc.nextLine());
-        Duration estimated_time = Duration.ofHours(hours);
+        LocalDateTime deadline = helper.readdeadline();
+        System.err.println("Your deadline is : " + deadline);
+        
+        Duration estimated_time = helper.readduration();
+        System.err.println("Your Duration is : " + estimated_time);
 
         Taskfile t1= new  Taskfile(
         title,
@@ -107,8 +105,7 @@ public class Taskmanager{
                     int choice = Integer.parseInt(sc.nextLine());
 
                     if (choice == 1) {
-                        System.err.print("Please enter the title you want to change to: ");
-                        String newtitle = sc.nextLine();
+                        String newtitle = helper.readtitle();
                         t.settitle(newtitle);
                         showtask();
                     } else if (choice == 2){            
@@ -117,33 +114,23 @@ public class Taskmanager{
                         t.setdescription(newdescription);
                         showtask();
                     } else if (choice == 3){            
-                        System.err.print("Please enter the Priority (LOW , MEDIUM, HIGH, URGENT) you want to change to: ");
-                        String newpriority = sc.nextLine();
-                        Priority priority = Priority.valueOf(newpriority.toUpperCase());
+                        Priority priority = Priority.valueOf(helper.readpriority());
                         t.setpriority(priority);
                         showtask();
                     } else if (choice == 4){            
-                        System.err.print("Please enter the Status (WORK, STUDY, EXPENSES, OTHERS) you want to change to: ");
-                        String newcategory = sc.nextLine();
-                        Category category = Category.valueOf(newcategory.toUpperCase());
+                        Category category = Category.valueOf(helper.readCategory());
                         t.setcategory(category);
                         showtask();
                     }  else if (choice == 5){            
-                        System.err.print("Please enter the Deadline you want to change to: ");
-                        String deadline_sc = sc.nextLine();
-                        LocalDateTime deadline = LocalDateTime.parse(deadline_sc, formatter);
+                        LocalDateTime deadline = helper.readdeadline();
                         t.setdeadline(deadline);
                         showtask();
                     } else if (choice == 6){            
-                        System.err.print("Please enter the Estimated time you want to change to: ");
-                        int hours= Integer.parseInt(sc.nextLine());
-                        Duration estimated_time = Duration.ofHours(hours);
+                        Duration estimated_time = helper.readduration();
                         t.setestimated_time(estimated_time);
                         showtask();
                     } else if (choice == 7){            
-                        System.out.print("please enter the Status to change to (TODO, DOING, DONE, OVERDUE): ");
-                        String status_sc = sc.nextLine();
-                        Status status = Status.valueOf(status_sc.toUpperCase());
+                        Status status = Status.valueOf(helper.readStatus());
                         t.setstatus(status);
                         if (status == Status.DONE){
                             t.setcompletion_date(LocalDateTime.now());

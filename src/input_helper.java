@@ -1,12 +1,13 @@
+import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Scanner;
-import java.util.format.DateTimeFormatter;
-
-private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm");
 
 public class input_helper{
+
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm");
 
     Scanner sc = new Scanner(System.in);
 
@@ -44,18 +45,35 @@ public class input_helper{
     }
 
     public LocalDateTime readdeadline(){
+        LocalDateTime validation;
+        LocalDateTime validation_go;
         while(true){
             System.out.print("please enter the deadline in format of (dd-mm-yyyy hh-mm): ");
             String deadline = sc.nextLine();
             try {
-                LocalDateTime validation = LocalDateTime.parse(deadline, formatter);
+                validation = LocalDateTime.parse(deadline, formatter);
+                validation_go = validation;
+                return validation_go;
             } catch (DateTimeParseException e) {
                 System.err.println("please enter right date.");
-                continue;
             }
         }
-        LocalDateTime validation_go = validation;
-        return validation_go;
+        
+    }
+
+    public Duration readduration(){
+        int validation;
+        while(true){
+            System.out.print("please enter the estimated duration of task in hours: ");
+            String hours= sc.nextLine();
+            try{
+                validation = Integer.parseInt(hours);
+                Duration estimated_time = Duration.ofHours(validation);
+                return estimated_time;
+            } catch(NumberFormatException e){
+                System.err.println("Enter the right duration.");
+            }
+        }
     }
 
     public String readStatus(){

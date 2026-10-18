@@ -73,3 +73,7 @@ input validation and sanitation to be implimented
 
 log 15-10-2026
 made input_helper class to validate the inputs. now it seems there is a problem as input helper methods are not being recognized by taskmanger. also [compact source file does not have main method in the form of void main() or void main(String[] args)] this error appeared.
+
+log 19-10-2026
+completed input validation. implimented it in all of taskmanager. the issue main in input helper turned out that you cannot put declaration like formmater outside class in class file. in try catch clock while(true) block the return statement helps escape the loop.
+next step is implimenting sqlite and task schedular algorithm.
