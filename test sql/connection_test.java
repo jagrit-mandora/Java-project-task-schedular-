@@ -1,10 +1,9 @@
-import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import .java.sql.executeQuery;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 
 public class Connection_test{
@@ -18,8 +17,14 @@ public class Connection_test{
             ps.setString(2, "b");
             ps.setString(3, "c");
             ps.executeUpdate();
+
             Statement st = c.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM TASKS");
+            while(rs.next()){
+                String Category = rs.getString("Category");
+                String title = rs.getString("title");
+                System.err.println(Category + "--" + title);
+            }
             
             System.err.println("connection successfull");
         } catch(SQLException e){
