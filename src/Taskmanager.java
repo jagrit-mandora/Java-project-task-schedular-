@@ -57,7 +57,7 @@ public class Taskmanager{
         int id = Integer.parseInt(sc.nextLine());
         for (int i=0; i < task.size() ; i++){
             Taskfile t = task.get(i);
-            if ( t.gettask_id().equals(String.valueOf(id)) ){
+            if ( t.gettask_id()==id){
                 System.err.println(t.tostring());
             }
         }
@@ -68,7 +68,7 @@ public class Taskmanager{
         int id = Integer.parseInt(sc.nextLine());
         for (int i=0; i < task.size() ; i++){
             Taskfile t = task.get(i);
-            if ( t.gettask_id().equals(String.valueOf(id)) ){
+            if ( t.gettask_id()==id){
                 task.remove(i);
                 System.err.println(t.tostring());
             }
@@ -88,7 +88,7 @@ public class Taskmanager{
         int id = Integer.parseInt(sc.nextLine());
         for (int i=0; i < task.size() ; i++){
             Taskfile t = task.get(i);
-            if ( t.gettask_id().equals(String.valueOf(id)) ){
+            if ( t.gettask_id()==id){
                 System.err.println(t.toString());
 
                 while (running) { 

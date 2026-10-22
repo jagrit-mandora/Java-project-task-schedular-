@@ -78,5 +78,9 @@ log 19-10-2026
 completed input validation. implimented it in all of taskmanager. the issue main in input helper turned out that you cannot put declaration like formmater outside class in class file. in try catch clock while(true) block the return statement helps escape the loop.
 next step is implimenting sqlite and task schedular algorithm.
 
-log 22-10-2026
+log 21-10-2026
 completed sqlite learning for implimenting in project. made decissions about where to start implimenting the database. still confused about some things but will handel them as they come.
+
+log 22-10-2026
+implimented sqlite to project. made the initialize method in taskdatabase class. changed taskfile removed id static counter and declared task_id as int. made a second constructor for database to use when the data is pulled from database it uses that constructor. made a setter for id for database to use.
+made taskdatabase and made intilize method. changed taskmanager to accomodate the change of string task_id to int task_id. used == instead of String.valuesof(). next will make insert for taskdatabase. then handel deleate and update.

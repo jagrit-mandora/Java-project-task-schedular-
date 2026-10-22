@@ -3,9 +3,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Taskfile{
-    public static int Id=1;
 
-    private String task_id;
+    private int task_id;
     private String title;
     private String description;
     private Priority priority;
@@ -23,10 +22,7 @@ public class Taskfile{
         Category category,
         LocalDateTime deadline,  
         Duration estimated_time){
-
-
-        this.task_id=String.valueOf(Id);
-        Id++;
+            
         this.title=title;
         this.description=description;
         this.creation_date=LocalDate.now();
@@ -35,6 +31,31 @@ public class Taskfile{
         this.deadline=deadline;
         this.estimated_time=estimated_time;
         this.status=Status.TODO;
+    }
+
+    public Taskfile (
+        int task_id,
+        String title,
+        String description,
+        Priority priority,
+        Category category,
+        LocalDate creation_date,
+        LocalDateTime deadline,
+        LocalDateTime completion_date,
+        Duration estimated_time,
+        Status status){
+            
+        this.task_id=task_id;
+        this.title=title;
+        this.description=description;
+        this.creation_date=creation_date;
+        this.priority=priority;
+        this.category=category;
+        this.creation_date=creation_date;
+        this.deadline=deadline;
+        this.completion_date=completion_date;
+        this.estimated_time=estimated_time;
+        this.status=status;
     }
 
     public String tostring(){
@@ -51,6 +72,7 @@ public class Taskfile{
         completion_date;
     }
 
+    public void settask_id(int task_id) {this.task_id=task_id;}
     public void settitle(String title) {this.title=title;}
     public void setdescription(String description) {this.description=description;}
     public void setpriority(Priority priority) {this.priority=priority;}
@@ -61,7 +83,7 @@ public class Taskfile{
     public void setstatus(Status status) {this.status=status;}
 
 
-    public String gettask_id() {return task_id;}
+    public int gettask_id() {return task_id;}
     public String gettilte() {return title;}
     public String getdescription() {return description;}
     public LocalDate getcreation_date() {return creation_date;}
