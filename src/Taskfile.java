@@ -78,6 +78,7 @@ public class Taskfile{
     public void setpriority(Priority priority) {this.priority=priority;}
     public void setcategory(Category category) {this.category=category;}
     public void setcompletion_date(LocalDateTime completion_date) {this.completion_date=completion_date;}
+    public void setcreation_date(LocalDate creation_date) {this.creation_date=creation_date;}
     public void setdeadline(LocalDateTime deadline) {this.deadline=deadline;}
     public void setestimated_time(Duration estimated_time) {this.estimated_time=estimated_time;}
     public void setstatus(Status status) {this.status=status;}

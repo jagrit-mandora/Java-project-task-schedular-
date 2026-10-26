@@ -84,3 +84,7 @@ completed sqlite learning for implimenting in project. made decissions about whe
 log 22-10-2026
 implimented sqlite to project. made the initialize method in taskdatabase class. changed taskfile removed id static counter and declared task_id as int. made a second constructor for database to use when the data is pulled from database it uses that constructor. made a setter for id for database to use.
 made taskdatabase and made intilize method. changed taskmanager to accomodate the change of string task_id to int task_id. used == instead of String.valuesof(). next will make insert for taskdatabase. then handel deleate and update.
+
+log 26-10-2026
+completed initialize method for database class. made changes in complition date to handel null complition date. made gettaskall() to get the task in memory from the task.db file. now arraylist taskfile intializes in taskdatabase. implimented e.getmessage for better debugging at catch blocks in taskdatabase.
+now this project can store data and prev tasks then load these tasks at start of each session.

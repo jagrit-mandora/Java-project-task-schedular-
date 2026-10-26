@@ -10,11 +10,13 @@ import java.util.Scanner;
  
 public class Taskmanager{
     
-    private ArrayList<Taskfile> task = new ArrayList<>();
-
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm");
 
     input_helper helper = new input_helper();
+
+    Taskdatabase database = new Taskdatabase();
+
+    ArrayList<Taskfile> task = database.getalltask();
 
     Scanner sc = new Scanner(System.in);
 
@@ -39,7 +41,7 @@ public class Taskmanager{
         Duration estimated_time = helper.readduration();
         System.err.println("Your Duration is : " + estimated_time);
 
-        Taskfile t1= new  Taskfile(
+        Taskfile t1 = new  Taskfile(
         title,
         description,
         priority,
@@ -48,6 +50,8 @@ public class Taskmanager{
         estimated_time);
 
         task.add(t1);
+
+        database.inserttask(t1);
 
         System.err.println(t1.tostring());
         }

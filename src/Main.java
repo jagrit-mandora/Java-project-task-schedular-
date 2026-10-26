@@ -6,9 +6,9 @@ public class Main {
 
         Scanner taskinput = new Scanner(System.in);
         boolean running = true;
-        Taskmanager manager = new Taskmanager();
         Taskdatabase database = new Taskdatabase();
         database.intialize();
+        Taskmanager manager = new Taskmanager();        
         
         while (running){
             System.out.println("1. add task");

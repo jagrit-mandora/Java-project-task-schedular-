@@ -4,7 +4,62 @@ Scanner estimated_time_input = new Scanner(System.in);
     Duration estimated_time = Duration.ofHours(hours);
     t.setestimated_time(estimated_time);
 
+if (t.getcompletion_date() == null) {
+    ps.setNull(7, java.sql.Types.VARCHAR);
+} else {
+    ps.setString(7, t.getcompletion_date().toString());
+}
 
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+
+   '''public void getalltask(){
+        try(Connection c = DriverManager.getConnection("jdbc:sqlite:task.db")) {
+            ArrayList<Taskfile> task = new ArrayList<>();
+            Statement st = c.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM TASKS");
+            while(rs.next()){
+                Taskfile t = new  Taskfile(
+                task_id,
+                title,
+                description,
+                priority,
+                category,
+                creation_date,
+                deadline,
+                completion_date,
+                estimated_time,
+                status);
+                int task_id = rs.getInt("TASK_ID");
+                t.settask_id(task_id);
+                String title = rs.getString("TITLE");
+                t.settitle(title);
+                String description = rs.getString("DESCRIPTION");
+                t.setdescription(description);
+                Priority priority = Priority.valueOf(rs.getString("PRIORITY"));
+                t.setpriority(priority);
+                Category category = Category.valueOf(rs.getString("CATEGORY"));
+                t.setcategory(category);
+                LocalDate creation_date = LocalDate.parse(rs.getString("CREATION_DATE"));
+                t.setcreation_date(creation_date);
+                LocalDateTime deadline = LocalDateTime.parse(rs.getString("DEADLINE"));
+                t.setdeadline(deadline);
+                LocalDateTime completion_date = LocalDateTime.parse(rs.getString("DEADLINE"));
+                t.setcompletion_date(completion_date);
+                Duration estimated_time = Duration.ofMinutes(rs.getLong("ESTIMATED_TIME"));
+                t.setestimated_time(estimated_time);
+                Status status = Status.valueOf(rs.getString("STATUS"));
+                t.setstatus(status);
+
+                task.add(t);
+                 
+            }
+        } catch (SQLException e) {
+            System.err.println("SQL ERROR");
+        }
+    }'''
 
 System.out.print("Choose an option: ");
 
