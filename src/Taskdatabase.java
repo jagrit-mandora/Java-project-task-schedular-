@@ -8,8 +8,11 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Taskdatabase{
+
+    Scanner sc = new Scanner(System.in);
     
     public void intialize(){
         try (Connection c = DriverManager.getConnection("jdbc:sqlite:task.db")){
@@ -88,5 +91,44 @@ public class Taskdatabase{
             e.printStackTrace();
         }
         return task;
+    }
+
+    public void remove_the_task(int id){
+        String id_deleate = String.valueOf(id);
+        try(Connection c = DriverManager.getConnection("jdbc:sqlite:task.db")) {
+            String sql = "DELETE FROM TASKS WHERE TASK_ID = ?";
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setString(1,id_deleate);
+            ps.executeUpdate();
+        } catch (SQLException e){
+            System.err.println("please enter the correct id ");
+        }
+    }
+
+    public void update_task(Taskfile t,int id){
+        String id_update = String.valueOf(id);
+        try(Connection c = DriverManager.getConnection("jdbc:sqlite:task.db")) {
+            String sql = "UPDATE TASKS (TITLE,DESCRIPTION," + 
+            "PRIORITY,CATEGORY,DEADLINE,COMPLETION_DATE,ESTIMATED_TIME,STATUS) WHERE TASK_ID = ?" + 
+            "VALUES (?,?,?,?,?,?,?,?)";
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setString(1, t.gettilte());
+            ps.setString(2, t.getdescription());
+            ps.setString(3, t.getpriority().name());
+            ps.setString(4, t.getcategory().name());
+            ps.setString(5, t.getdeadline().toString());
+            if(t.getcompletion_date() == null){
+                ps.setNull(6, java.sql.Types.VARCHAR);
+            }
+            else{
+                ps.setString(6, t.getcompletion_date().toString());
+            }
+            ps.setLong(7, t.getestimated_time().toMinutes());
+            ps.setString(8, t.getstatus().name());
+            ps.setString(9, id_update);
+            ps.executeUpdate();
+        } catch (SQLException e){
+            System.err.println("please enter the correct id ");
+        }
     }
 }

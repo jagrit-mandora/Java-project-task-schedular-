@@ -76,6 +76,7 @@ public class Taskmanager{
                 task.remove(i);
                 System.err.println(t.tostring());
             }
+        database.remove_the_task(id);
         }
     }
 
@@ -139,15 +140,16 @@ public class Taskmanager{
                         if (status == Status.DONE){
                             t.setcompletion_date(LocalDateTime.now());
                             System.out.println("DEBUG: " + t.getcompletion_date());
+                        }
                         showtask();
                     } else if (choice == 8){
                         running = false;
                     } else {showtask();}
-        
+
+                database.update_task(t, id);
                 }
 
             }
         }
     }
-}
 }
