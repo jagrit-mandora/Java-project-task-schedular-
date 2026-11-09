@@ -18,7 +18,13 @@ public class Taskmanager{
 
     ArrayList<Taskfile> task = database.getalltask();
 
+    Algo algo = new Algo();
+
     Scanner sc = new Scanner(System.in);
+
+    public void suggesttask(){
+        algo.suggest_the_task();
+    }
 
     public void addtaskinput(){
 
@@ -145,9 +151,9 @@ public class Taskmanager{
                     } else if (choice == 8){
                         running = false;
                     } else {showtask();}
-
-                database.update_task(t, id);
                 }
+                database.update_task(t, id);
+                break;
 
             }
         }

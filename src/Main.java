@@ -11,6 +11,7 @@ public class Main {
         Taskmanager manager = new Taskmanager();        
         
         while (running){
+            System.out.println("0. suggest task");
             System.out.println("1. add task");
             System.out.println("2. view task");
             System.out.println("3. show all");
@@ -21,7 +22,9 @@ public class Main {
 
             int choice = Integer.parseInt(taskinput.nextLine());
 
-            if (choice==1) {
+            if (choice==0) {
+                manager.suggesttask();
+            } else if (choice==1) {
                 manager.addtaskinput();
             } else if (choice==2) {
                 manager.view_task();
