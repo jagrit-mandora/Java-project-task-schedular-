@@ -1,5 +1,5 @@
+import java.time.Duration;
 import java.util.Scanner;
-
 
 public class Main {
     public static void main(String[] args) {
@@ -23,7 +23,20 @@ public class Main {
             int choice = Integer.parseInt(taskinput.nextLine());
 
             if (choice==0) {
-                manager.suggesttask();
+                int validation;
+                boolean going = true;
+                while(going){
+                    System.out.print("please enter the estimated free minutes of task: ");
+                    String minutes= taskinput.nextLine();
+                    try{
+                        validation = Integer.parseInt(minutes);
+                        Duration estimated_time = Duration.ofMinutes(validation);
+                        manager.suggesttask(estimated_time.toMinutes());
+                        going = false;
+                    } catch(NumberFormatException e){
+                        System.err.println("Enter the right duration.");
+                    }
+                }
             } else if (choice==1) {
                 manager.addtaskinput();
             } else if (choice==2) {

@@ -22,8 +22,8 @@ public class Taskmanager{
 
     Scanner sc = new Scanner(System.in);
 
-    public void suggesttask(){
-        algo.suggest_the_task();
+    public void suggesttask(long minutes){
+        algo.suggest(task, minutes);
     }
 
     public void addtaskinput(){
