@@ -149,11 +149,10 @@ public class Taskmanager{
                         }
                         showtask();
                     } else if (choice == 8){
+                        database.update_task(t, id);
                         running = false;
                     } else {showtask();}
                 }
-                database.update_task(t, id);
-                break;
 
             }
         }

@@ -108,9 +108,9 @@ public class Taskdatabase{
     public void update_task(Taskfile t,int id){
         String id_update = String.valueOf(id);
         try(Connection c = DriverManager.getConnection("jdbc:sqlite:task.db")) {
-            String sql = "UPDATE TASKS (TITLE,DESCRIPTION," + 
-            "PRIORITY,CATEGORY,DEADLINE,COMPLETION_DATE,ESTIMATED_TIME,STATUS) WHERE TASK_ID = ?" + 
-            "VALUES (?,?,?,?,?,?,?,?)";
+            String sql = "UPDATE TASKS SET TITLE=?,DESCRIPTION=?," + 
+            "PRIORITY=?,CATEGORY=?,DEADLINE=?,COMPLETION_DATE=?,ESTIMATED_TIME=?,STATUS=?"+
+            "WHERE TASK_ID = ?";
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, t.gettilte());
             ps.setString(2, t.getdescription());
@@ -127,8 +127,11 @@ public class Taskdatabase{
             ps.setString(8, t.getstatus().name());
             ps.setString(9, id_update);
             ps.executeUpdate();
+            int rows = ps.executeUpdate();
+            System.out.println("DEBUG rows updated: " + rows);
         } catch (SQLException e){
             System.err.println("please enter the correct id ");
+            System.err.println("update failed: " + e.getMessage());
         }
     }
 }

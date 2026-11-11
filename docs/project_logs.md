@@ -88,3 +88,15 @@ made taskdatabase and made intilize method. changed taskmanager to accomodate th
 log 26-10-2026
 completed initialize method for database class. made changes in complition date to handel null complition date. made gettaskall() to get the task in memory from the task.db file. now arraylist taskfile intializes in taskdatabase. implimented e.getmessage for better debugging at catch blocks in taskdatabase.
 now this project can store data and prev tasks then load these tasks at start of each session.
+
+log 31-10-2026
+completed remove_the_task and update_task. as i load all the data from task.db to arraylist task. i dont need to use sql in veiw and show. that is handled from the arraylist and not the database.
+now the user can update the tasks and they will be stored in the memory and database both at once.
+now before adding adding any other features first i need to complete the task_schedular algorith that suggest the next task to do.
+
+log 10-11-2026
+started with algo for schedular. encoutered a bug with updation of edited material after restart of the program. problem with remembering the code need to study it again to gain clarity.
+started with algo for schedular. encoutered a bug with updation of edited material after restart of the program. problem with remembering the code need to study it again to gain clarity.
+
+log 11-11-2026
+solved the update task problem. it turns out i had written the syntax of insert where update sql syntax should have been
